@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G_M SERVICE AUTO MECHANICS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-row">
+      <img src="logo.png" alt="Logo G_M Service" class="logo-left">
+      <div class="language-switcher">
+        <button onclick="location.href='g_mservice.html'">Français</button>
+        <button onclick="location.href='en_gmservice.html'">English</button>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <h1>G_M SERVICE AUTO MECHANICS</h1>
+      <p>Service automobile fiable à Ottawa-Gatineau</p>
+    </div>
+
+    <nav class="page-nav">
+      <button onclick="scrollToSection('services')">Nos Services</button>
+      <button onclick="scrollToSection('values')">Nos Valeurs</button>
+      <button onclick="scrollToSection('appointment')">Rendez-vous</button>
+      <button onclick="scrollToSection('contact')">Contact</button>
+    </nav>
+
+    <div class="about-header">
+      <h2>À propos</h2>
+      <p>Chez G_M Service, nous croyons que l'entretien et la réparation de votre véhicule ne devraient pas vous faire perdre de temps ni compliquer votre quotidien. C'est pourquoi nous offrons un service de garage mobile, sur place ou à domicile, adapté à votre horaire et à vos besoins.</p>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>Nos Services</h2>
+    <p>Cliquez sur un service pour voir les détails :</p>
+
+    <div class="service-grid">
+      <div class="service-card" onclick="toggleDescription(this)">
+        <img src="oil.jpg" alt="Changement d'huile">
+        <h3>Changement d’huile</h3>
+        <p class="desc">Nous effectuons une vidange et remplaçons le filtre pour assurer le bon fonctionnement de votre moteur.</p>
+      </div>
+
+      <div class="service-card" onclick="toggleDescription(this)">
+        <img src="tires.jpg" alt="Changement de pneus">
+        <h3>Changement de pneus sur jante</h3>
+        <p class="desc">Nous montons et équilibrons vos pneus été ou hiver sur place, sans que vous ayez à vous déplacer.</p>
+      </div>
+
+      <div class="service-card" onclick="toggleDescription(this)">
+        <img src="brakes.jpg" alt="Service de freins">
+        <h3>Inspection et remplacement des freins</h3>
+        <p class="desc">Inspection complète du système de freinage et remplacement des plaquettes et disques si nécessaire.</p>
+      </div>
+
+      <div class="service-card" onclick="toggleDescription(this)">
+        <img src="diagnostic.jpg" alt="Diagnostic électronique">
+        <h3>Numérisation du véhicule</h3>
+        <p class="desc">Diagnostic électronique complet à l'aide d'un scanner professionnel pour détecter toute anomalie.</p>
+      </div>
+
+      <div class="service-card" onclick="toggleDescription(this)">
+        <img src="battery.jpg" alt="Batterie">
+        <h3>Remplacement de la batterie</h3>
+        <p class="desc">Test et remplacement de la batterie sur place pour éviter les pannes imprévues.</p>
+      </div>
+
+      <div class="service-card" onclick="toggleDescription(this)">
+        <img src="lights.jpg" alt="Lumières">
+        <h3>Changement de lumières</h3>
+        <p class="desc">Remplacement des phares, feux arrière ou clignotants pour garantir votre sécurité sur la route.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <h2>Nos Valeurs</h2>
+    <ul>
+      <li><strong>Fiabilité</strong> – Fournir un service constant, ponctuel et de qualité, où que vous soyez.</li>
+      <li><strong>Transparence</strong> – Offrir des explications claires sur les services et les tarifs.</li>
+      <li><strong>Flexibilité</strong> – S’adapter à vos besoins en intervenant quand et où cela vous convient.</li>
+      <li><strong>Professionnalisme</strong> – Travailler avec précision, respect et propreté, même en déplacement.</li>
+      <li><strong>Service client</strong> – Placer votre satisfaction au cœur de chaque intervention avec une approche humaine.</li>
+    </ul>
+  </section>
+
+  <section id="appointment">
+    <h2>Prendre rendez-vous</h2>
+    <form id="appointment-form" novalidate>
+      <label for="firstname">Prénom <span class="required">*</span></label><br>
+      <input type="text" id="firstname" name="firstname" required><br>
+      <small class="error-message">Ce champ est obligatoire</small><br><br>
+
+      <label for="lastname">Nom de famille <span class="required">*</span></label><br>
+      <input type="text" id="lastname" name="lastname" required><br>
+      <small class="error-message">Ce champ est obligatoire</small><br><br>
+
+      <label for="phone">Téléphone <span class="required">*</span></label><br>
+      <input type="tel" id="phone" name="phone" pattern="[0-9+\s()-]{10,}" required placeholder="+1 (613) 123-4567"><br>
+      <small class="error-message">Ce champ est obligatoire</small><br><br>
+
+      <label for="email">Adresse courriel <span class="required">*</span></label><br>
+      <input type="email" id="email" name="email" required><br>
+      <small class="error-message">Ce champ est obligatoire</small><br><br>
+
+      <label for="date">Date souhaitée <span class="required">*</span></label><br>
+      <input type="date" id="date" name="date" required><br>
+      <small class="error-message">Ce champ est obligatoire</small><br><br>
+
+      <label for="service">Service demandé <span class="required">*</span></label><br>
+      <textarea id="service" name="service" rows="4" required placeholder="Décrivez le service souhaité..."></textarea><br>
+      <small class="error-message">Ce champ est obligatoire</small><br><br>
+
+      <input type="submit" value="Envoyer la demande">
+    </form>
+
+    <p id="confirmation-message" style="display: none; color: green; font-weight: bold; margin-top: 1rem;">
+      Demande envoyée, Merci!
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Téléphone :</strong> <a href="tel:+16138804160">+1 (613) 880-4160</a></p>
+    <p><strong>Courriel :</strong> <a href="mailto:gmautoservicee@gmail.com">gmautoservicee@gmail.com</a></p>
+    <p><strong>Adresse :</strong> Orléans, Canada</p>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2025 G_M SERVICE AUTO MECHANICS</p>
+  </footer>
+
+  <script>
+    function toggleDescription(card) {
+      const desc = card.querySelector('.desc');
+      if (desc) {
+        const isVisible = desc.style.display === 'block';
+        desc.style.display = isVisible ? 'none' : 'block';
+      }
+    }
+  
+    document.getElementById('appointment-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      let isValid = true;
+      const fields = this.querySelectorAll('input[required], textarea[required]');
+  
+      fields.forEach(field => {
+        const error = field.nextElementSibling;
+        if (!field.value.trim()) {
+          isValid = false;
+          error.style.display = 'inline';
+        } else {
+          error.style.display = 'none';
+        }
+      });
+  
+      if (isValid) {
+        this.reset();
+        const confirmation = document.getElementById('confirmation-message');
+        confirmation.textContent = "Demande envoyée, nous vous contacterons sous peu. Merci !";
+        confirmation.style.display = 'block';
+  
+        // Scroll to the top header-center section
+        const topSection = document.querySelector('.header-center');
+        if (topSection) {
+          topSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        document.getElementById('confirmation-message').style.display = 'none';
+      }
+    });
+  
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  
+  
+
+</body>
+</html>
+
+
+    

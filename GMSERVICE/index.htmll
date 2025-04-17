@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choisissez votre langue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="language-selection">
+    <h1>Bienvenue chez G_M SERVICE AUTO MECHANICS</h1>
+    <p>Veuillez choisir votre langue / Please select your language:</p>
+    <button onclick="location.href='g_mservice.html'">Français</button>
+    <button onclick="location.href='en_gmservice.html'">English</button>
+  </div>
+</body>
+</html>
